@@ -57,7 +57,7 @@ async def s(ctx, *, message ):
                  await channel.send(f"{message}")
 
 @client.command()
-async def del (ctx):
+async def delall (ctx):
     guild=ctx.message.guild
     await ctx.message.delete()
     
