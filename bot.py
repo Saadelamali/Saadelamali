@@ -65,7 +65,5 @@ async def del (ctx):
         try:
             await channel.delete()
             print(f"{channel.name} has been deleted")
-        except:
-             pass
 
 client.run(token)
