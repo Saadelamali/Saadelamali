@@ -62,7 +62,7 @@ async def c(ctx, *, message):
   guild=ctx.message.guild
   await ctx.message.delete()
   for i in range(1):
-     await guild.create_text_channel(f"{message}") 
+     print("Created")
    while True:
            for channel in guild.text_channels:
               await guild.create_text_channel(f"{message}")
