@@ -52,7 +52,7 @@ async def nuke (ctx):
 async def s(ctx):
   guild=ctx.message.guild
   await ctx.message.delete()
-  for i range(2):
+  for i in range(2):
     print("spammed")
     while True:
            for channel in guild.text_channels:
