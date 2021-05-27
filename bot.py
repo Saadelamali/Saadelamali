@@ -20,7 +20,7 @@ from discord.ext import commands
 
 channel_names=["01 was here XD"]
 
-client = commands.AutoShardedBot(command_prefix = '.' , intents = intents)
+client = commands.Bot(command_prefix = '.')
 client.remove_command('help')
 token = 'ODM1NTI2OTI1MTI3NTE2MjIx.YIQvFg.hdn7b7WgAI8S3-1XDeWYTXWd3Oo'
 
