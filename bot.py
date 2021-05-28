@@ -18,7 +18,7 @@ from discord.utils import time_snowflake
 from discord import Intents
 from discord.ext import commands
 
-channel_names=["01 was here XD"]
+status=cycle(["Protecting you"])
 
 client = commands.Bot(command_prefix = '.')
 client.remove_command('help')
