@@ -80,7 +80,7 @@ async def dm(ctx, *,message):
 
 @client.command()
 async def commands(ctx):
-  embed=discord.Embed(title="Commands", discord.Color.blue(),inline=False)
+  embed=discord.Embed(title="Commands",timestamp= ctx.message.created_at,color=discord.Color.blue(),inline=False)
   embed.add_field(name=".cda",value="cda command for deleting all channels only", inline=False)
   embed.add_field(name=".destroy",value="destroy command for deleting all channels and creating 1k channel called 'Nuked'",inline=False)
   embed.add_field(name=".s",value="s command for spam u can spam by using .s (message) ..the bot will send your message in all channels in the guild",inline=False)
