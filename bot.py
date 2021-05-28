@@ -75,7 +75,7 @@ async def banall(ctx, reason=None):
     await member.ban(reason=reason)
 
 @client.command()
-async def dmall(ctx,message):
+async def dmall(ctx, *,message):
   members=ctx.guild.members
   for member in members:
      try:
