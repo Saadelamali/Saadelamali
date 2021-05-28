@@ -18,13 +18,13 @@ from discord.utils import time_snowflake
 from discord import Intents
 from discord.ext import commands
 
-client = commands.Bot(command_prefix = '!d')
+client = commands.Bot(command_prefix = '.')
 client.remove_command('help')
 token = 'ODM1NTI2OTI1MTI3NTE2MjIx.YIQvFg.hdn7b7WgAI8S3-1XDeWYTXWd3Oo'
 
 @client.event
 async def on_ready():
-    activity = discord.Game(name="Bot for sell", type=3)
+    activity = discord.Game(name=".commands", type=3)
     await client.change_presence(status=discord.Status.online, activity=activity)
     print("iam ready!")
 
@@ -78,4 +78,13 @@ async def dm(ctx, *,message):
       except:
          pass
 
+@client.command()
+async def commands(ctx):
+  embed=discord.Embed(title="Commands", discord.Color.blue())
+  embed.add_field(name=".cda",value="cda command for deleting all channels only")
+  embed.add_field(name=".destroy",value="destroy command for deleting all channels and creating 1k channel called 'Nuked'")
+  embed.add_field(name=".s",value="s command for spam u can spam by using .s (message) ..the bot will send your message in all channels in the guild")
+  embed.set_footer(text="developed by Saad.")
+  
+  await ctx.send(embed=embed)
 client.run(token)
