@@ -17,7 +17,7 @@ from discord.member import Member
 from discord.utils import time_snowflake
 from discord import Intents
 from discord.ext import commands
-frim itertools import cycle
+from itertools import cycle
 
 status=cycle(["Protecting you"])
 
