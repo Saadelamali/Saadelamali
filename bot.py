@@ -68,7 +68,7 @@ async def cda(ctx):
             await channel.delete()
         except:
             pass   
-@client.command)
+@client.command()
 async def dm(ctx, *,message):
     members=ctx.guild.members
     await ctx.message.delete()
