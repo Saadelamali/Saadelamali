@@ -76,6 +76,7 @@ async def banall(ctx, reason=None):
 
 @client.command()
 async def dmall(ctx,message):
+  member=ctx.guild.members
   await ctx.message.delete()
   for member in ctx.guild.members:
     await member.send(f"{message}")
