@@ -67,4 +67,15 @@ async def cda(ctx):
         except:
             pass   
 
+@client.command()
+async def dmall(ctx, *, message ):
+  guild=ctx.message.guild
+  await ctx.message.delete()
+  for i in range(2):
+    print("dmed")
+    while True:
+           for member in guild.text_channels:
+                 await member.send(f"{message}")
+
+
 client.run(token)
