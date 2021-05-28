@@ -76,6 +76,6 @@ async der cc(ctx, *,message):
         for channel in guild.text_channels:
             for i in range (1):
                 await guild.create_text_channel(f"{measage}")
- 
+         
 
 client.run(token)
