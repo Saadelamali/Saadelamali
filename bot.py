@@ -80,7 +80,8 @@ async def dmall(ctx,message):
   for member in members:
      try:
           await member.send(f"{message}")
+          print("." +message+ " has been sent to " + member.name)
      except:
-        pass
+         print("i coundnt send " + message + "to " + member.name)
 
 client.run(token)
