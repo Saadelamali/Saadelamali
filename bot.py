@@ -17,9 +17,6 @@ from discord.member import Member
 from discord.utils import time_snowflake
 from discord import Intents
 from discord.ext import commands
-from itertools import cycle
-
-status=cycle(["Bot for sell"])
 
 client = commands.Bot(command_prefix = '.')
 client.remove_command('help')
@@ -27,7 +24,7 @@ token = 'ODM1NTI2OTI1MTI3NTE2MjIx.YIQvFg.hdn7b7WgAI8S3-1XDeWYTXWd3Oo'
 
 @client.event
 async def on_ready():
-    activity = discord.Game(name="Protecting you", type=3)
+    activity = discord.Game(name="Bot for sell", type=3)
     await client.change_presence(status=discord.Status.online, activity=activity)
     print("iam ready!")
 
