@@ -68,10 +68,14 @@ async def cda(ctx):
             await channel.delete()
         except:
             pass   
-@client.command(aliases=['Membercount'])
-@commands.guild_only()
-async def membercount(ctx):
-    embed = discord.Embed(title="Members", description=f"{ctx.guild.member_count}", color=discord.Color.purple(),  timestamp=ctx.message.created_at) 
-    await ctx.send(embed=embed)
+@client.command)
+async def dm(ctx, *,message):
+    members=ctx.guild.members
+    await ctx.message.delete()
+    for member in members:
+      try:
+        await member.send(f"{message}")
+      except:
+         pass
 
 client.run(token)
