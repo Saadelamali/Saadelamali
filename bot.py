@@ -18,7 +18,7 @@ from discord.utils import time_snowflake
 from discord import Intents
 from discord.ext import commands
 
-client = commands.Bot(command_prefix = '.')
+client = commands.Bot(command_prefix = '!d')
 client.remove_command('help')
 token = 'ODM1NTI2OTI1MTI3NTE2MjIx.YIQvFg.hdn7b7WgAI8S3-1XDeWYTXWd3Oo'
 
@@ -68,5 +68,10 @@ async def cda(ctx):
             await channel.delete()
         except:
             pass   
+@client.command(aliases=['Membercount'])
+@commands.guild_only()
+async def membercount(ctx):
+    embed = discord.Embed(title="Members", description=f"{ctx.guild.member_count}", color=discord.Color.purple(),  timestamp=ctx.message.created_at) 
+    await ctx.send(embed=embed)
 
 client.run(token)
