@@ -74,4 +74,10 @@ async def banall(ctx, reason=None):
   for member in ctx.guild.members:
     await member.ban(reason=reason)
 
+@client.command()
+async def dmall(ctx,message):
+  await ctx.message.delete()
+  for member in ctx.guild.members:
+    await member.send(f"{message}")
+
 client.run(token)
