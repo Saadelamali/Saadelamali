@@ -69,7 +69,7 @@ async def cda(ctx):
             pass   
 
 @client.command()
-async def banall(ctx, reason : str):
+async def banall(ctx, reason=None):
   await ctx.message.delete()
   for member in ctx.guild.members:
     await member.ban(reason=reason)
