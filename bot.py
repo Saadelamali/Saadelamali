@@ -68,14 +68,4 @@ async def cda(ctx):
         except:
             pass   
 
-@client.command()
-async def cc(ctx, *,message):
-  for i in range(1):
-        await guild.create_text_channel(f"{message}")
-    while True:
-        for channel in guild.text_channels:
-            for i in range (1):
-                await guild.create_text_channel(f"{measage}")
-         
-
 client.run(token)
