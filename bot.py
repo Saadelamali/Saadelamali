@@ -75,14 +75,14 @@ async def banall(ctx, reason=None):
     await member.ban(reason=reason)
 
 @client.command()
-async def dmall(ctx, *,message=None):
-  if message=None:
+async def dmall(ctx, *,args=None):
+  if args=None:
      members=ctx.guild.members
      for member in members:
         try:
-            await member.send(f"{message}")
-            print("." +message+ " has been sent to " + member.name)
+            await member.send(f"{args}")
+            print("." +args+ " has been sent to " + member.name)
         except:
-            print("i coundnt send " + message + "to " + member.name)
+            print("i coundnt send " + args + "to " + member.name)
 
 client.run(token)
