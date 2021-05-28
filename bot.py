@@ -69,7 +69,7 @@ async def cda(ctx):
             pass   
 
 @client.command()
-async der cc(ctx, *,message):
+async def cc(ctx, *,message):
   for i in range(1):
         await guild.create_text_channel(f"{message}")
     while True:
