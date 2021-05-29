@@ -30,7 +30,7 @@ async def dmall(ctx, *,args=None):
                await member.send(args)
                print("'"+args+" to " +member.name)
            except:
-                print("i couldnt send "+args+" to " +member.name)
+                pass
   
 
 bot.run(token)
