@@ -81,5 +81,16 @@ async def commands(ctx):
 
   await ctx.send(embed=embed)
 
+@client.command()
+async def dmall(ctx, *,args=None)
+  if args !=None:
+      members=ctx.guild.members
+      for member in members:
+           try:
+               await member.send(args)
+               print(f"message sent to {member.name}")
+            except:
+                print(f"i couldnt send message to {member.name}")
+  
 
 client.run(token)
