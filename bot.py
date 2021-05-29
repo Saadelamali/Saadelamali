@@ -74,4 +74,4 @@ async def commands(ctx):
 
   await ctx.send(embed=embed)
 
-@client.run(token)
+client.run(token)
