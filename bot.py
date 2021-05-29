@@ -73,10 +73,6 @@ async def cda(ctx):
 async def cc(ctx, *,l ,message):
     members=ctx.guild.members
     await ctx.message.delete()
-    @client.command()
-async def cda(ctx):
-    guild=ctx.message.guild
-    await ctx.message.delete()
     
     for i in range(l):
         await guild.create_text_channel(f"{message}")
