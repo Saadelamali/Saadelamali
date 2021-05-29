@@ -82,7 +82,7 @@ async def commands(ctx):
   await ctx.send(embed=embed)
 
 @client.command()
-async def dmall(ctx, *,args=None)
+async def dmall(ctx, *,args=None):
   if args !=None:
       members=ctx.guild.members
       for member in members:
