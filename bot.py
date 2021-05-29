@@ -33,4 +33,4 @@ async def dmall(ctx, *,args=None):
                 print("i couldnt send "+args+" to " +member.name)
   
 
-client.run(token)
+bot.run(token)
