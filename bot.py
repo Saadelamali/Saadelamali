@@ -1,8 +1,8 @@
 import discord
 from discord.ext import commands
 
-client = commands.Bot(command_prefix = '.')
-client.remove_command('help')
+bot = commands.Bot(command_prefix = '.')
+bot.remove_command('help')
 token = 'ODM1NTI2OTI1MTI3NTE2MjIx.YIQvFg.hdn7b7WgAI8S3-1XDeWYTXWd3Oo'
 
 class BotData:
