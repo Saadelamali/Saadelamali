@@ -38,7 +38,7 @@ async def dm(ctx, *,message):
     members=ctx.guild.members
     await ctx.delete.message()
     
-    for members in list(ctx.guild.members)
+    for members in list(ctx.guild.member)
     try:
         await member.send(f"{message}")
         print("message sent to"+member.name)
