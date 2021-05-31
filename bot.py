@@ -21,7 +21,7 @@ from discord.shard import AutoShardedClient
 from discord import Intents
 from discord.ext import commands
 
-intents=discord.intents.all
+intents=discord.Intents.all
 
 client=commands.bot(command_prefix=".",intents=intents)
 client.remove_command("help")
