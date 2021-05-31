@@ -18,7 +18,6 @@ from discord.ext.commands.core import after_invoke, command, cooldown, has_permi
 from discord.ext.commands.errors import BotMissingPermissions, MissingPermissions, MissingRequiredArgument
 from discord.member import Member
 from discord.shard import AutoShardedClient
-from discord.utils import time_snowflake
 from discord import Intents
 from discord.ext import commands
 
