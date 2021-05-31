@@ -3,7 +3,7 @@ from discord.ext import commands
 
 intents=discord.Intents.all()
 
-client=commands.bot(command_prefix=".",intents = intents)
+client=commands.bot(command_prefix=".",Intents = intents)
 client.remove_command("help")
 token="ODQyMTQ2ODcwNjk1ODIxMzI0.YJxEZA.7hAolYuevVbG1VgpHw-FlZYtBj0"
 
