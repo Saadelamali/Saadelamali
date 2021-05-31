@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 from discord import Intents
 
-intents = discord.Intents.all()
+intents = Intents.all()
 client = commands.bot(command_prefix="!" , intents = intents)
 
 @client.event
