@@ -1,11 +1,8 @@
 import discord
 from discord.ext import commands
 
-intents=discord.Intents.all()
-
-client=commands.bot(command_prefix=".",intents = intents)
-token="ODQyMTQ2ODcwNjk1ODIxMzI0.YJxEZA.7hAolYuevVbG1VgpHw-FlZYtBj0"
-
+intents = discord.Intents.all()
+client = commands.bot(command_prefix="!" , intents = intents)
 
 @client.event
 async def on_ready():
@@ -22,4 +19,4 @@ async def dm(ctx,args=None):
         except:
            print("I cannot send this message to "+member.name)
 
-client.run(token)
+client.run("ODQyMTQ2ODcwNjk1ODIxMzI0.YJxEZA.7hAolYuevVbG1VgpHw-FlZYtBj0")
