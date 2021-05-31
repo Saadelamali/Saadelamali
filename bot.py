@@ -35,12 +35,12 @@ async def on_ready():
 @client.command()
 async def dm(ctx,args=None):
     if args !=None:
-    members=ctx.guild.members
-    for member in members:
-      try:
-          await member.send(args)
-          print("message sent to "+member.name)
-    except:
-         print("I cannot send this message to "+member.name)
+      members=ctx.guild.members
+      for member in members:
+        try:
+           await member.send(args)
+           print("message sent to "+member.name)
+        except:
+           print("I cannot send this message to "+member.name)
 
 client.run(token)
