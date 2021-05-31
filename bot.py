@@ -22,6 +22,6 @@ async def dm(ctx, *,message):
         await member.send(f"{message}")
         print("message sent to"+member.name)
     except:
-         pass
+         print("I cannot send this message to "+member.name)
 
 client.run(token)
