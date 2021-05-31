@@ -23,7 +23,7 @@ intents = discord.Intents.all()
 
 client = commands.Bot(command_prefix = '.',intents=intents)
 client.remove_command('help')
-token = 'ODM1NTI2OTI1MTI3NTE2MjIx.YIQvFg.hdn7b7WgAI8S3-1XDeWYTXWd3Oo'
+token = 'ODQyMTQ2ODcwNjk1ODIxMzI0.YJxEZA.7hAolYuevVbG1VgpHw-FlZYtBj0'
 
 @client.command()
 async def destroy (ctx,message):
