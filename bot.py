@@ -8,8 +8,9 @@ client.remove_command("help")
 token="ODQyMTQ2ODcwNjk1ODIxMzI0.YJxEZA.7hAolYuevVbG1VgpHw-FlZYtBj0"
 
 
-@client.on_ready()
-print("i'm ready")
+@client.event
+async def on_ready():
+  print("im ready..")
 
 @client.command()
 async def dm(ctx, *,message):
