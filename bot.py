@@ -22,15 +22,11 @@ from discord.ext import commands
 client = commands.Bot(command_prefix = '-')
 client.remove_command('help')
 
-@client.command(aliases=['Help','HELP'])
-@commands.guild_only()
-async def help(ctx):
-    channel = ctx.message.author
-    embed = discord.Embed(title="HELP", timestamp= ctx.message.created_at ,color=discord.Color(0x5d018f))
-    embed.add_field(name='**Moderation commands**', value='`ban`, `kick`, `warn`, `nick`, `mute`, `unmute`',inline=False )
-    embed.add_field(name='**Fun commands**',value='`kiss`, `punch`, `slap`, `hug`,`say`,`pedorate`, `gayrate`, `simprate`, `rnumber`, `zero`',inline=False)
-    embed.add_field(name='**Other commands**',value=' `membercount`, `roles`,  `tos`, `invite`, `server`, `avatar`, `whois`, `vote`, `ping`,',inline=False)
-    embed.add_field(name='**support**',value="[ZeroOn1 Support](https://discord.gg/bqsdzwvX6t)")
+@client.event
+async def on_ready():
+    activity = discord.Game(name="https://discord.gg/cYwqYw2Rtr", type=3)
+    await client.change_presence(status=discord.Status.online, activity=activity)
+    print("The bot is ready")
 
     await ctx.send(embed=embed)
 
