@@ -30,7 +30,7 @@ async def help(ctx):
     embed.add_field(name='**Moderation commands**', value='`ban`, `kick`, `warn`, `nick`, `mute`, `unmute`',inline=False )
     embed.add_field(name='**Fun commands**',value='`kiss`, `punch`, `slap`, `hug`,`say`,`pedorate`, `gayrate`, `simprate`, `rnumber`, `zero`',inline=False)
     embed.add_field(name='**Other commands**',value=' `membercount`, `roles`,  `tos`, `invite`, `server`, `avatar`, `whois`, `vote`, `ping`,',inline=False)
-    embed.set_footer(text='[ZeroOn1 Support](https://discord.gg/bqsdzwvX6t)')
+    embed.add_field(name='**support**',value="[ZeroOn1 Support](https://discord.gg/bqsdzwvX6t)")
 
     await ctx.send(embed=embed)
 
