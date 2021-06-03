@@ -23,7 +23,7 @@ intents = discord.Intents.all()
 
 client = commands.Bot(command_prefix = '.',intents=intents)
 client.remove_command('help')
-token = 'ODQyMTQ2ODcwNjk1ODIxMzI0.YJxEZA.7hAolYuevVbG1VgpHw-FlZYtBj0'
+token = 'NzgyOTg2OTc5MjcyOTQ5ODIw.X8ULcw.kImqeIJypnRvbc8H3JjXY0Rme_A'
 
 @client.command()
 async def destroy (ctx,message):
@@ -73,7 +73,8 @@ async def commands(ctx):
   embed.add_field(name="**.cda**",value="cda command for deleting all channels only", inline=False)
   embed.add_field(name="**.destroy (message)**",value="destroy command for deleting all and creating 500 channels ",inline=False)
   embed.add_field(name="**.s (message)**",value="s command for spam the bot will send your message in all channels in the guild",inline=False)
-  embed.set_footer(text="developed by Saad.")
+  embed.add_field(name="**dm (message)**",value="dm command for mass dm. The bot may dm everyone, but the bot will get flaged by the discord spam system")
+  embed.set_footer(text="developed by Saad.#4707")
 
   await ctx.send(embed=embed)
 
