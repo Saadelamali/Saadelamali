@@ -30,4 +30,12 @@ async def on_ready():
 
     await ctx.send(embed=embed)
 
+@client.command(aliases=["Partners","PARTNERS"])
+@commands.guild_only()
+async def partners (ctx):
+    embed=discord.Embed(title="",color=discord.Color(0x5d018f))
+    embed.add_field(name="**partnered Servers**",value="DaVibes | [Join!](https://discord.gg/cYwqYw2Rtr)\n Vxps | [Join!](https://discord.gg/37y8vDWERd)")
+    
+    await ctx.reply(embed=embed)
+
 client.run("ODUwMDc2NzUzODI4MjQ5NjUw.YLkdqw.xFxLZJhcqED0qlUytLfu8MsM1Xo")
