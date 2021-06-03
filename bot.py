@@ -18,12 +18,9 @@ from discord.utils import time_snowflake
 from discord import Intents
 from discord.ext import commands
 
-intents = discord.Intents.all()
 
-
-client = commands.Bot(command_prefix = '.',intents=intents)
+client = commands.Bot(command_prefix = '-')
 client.remove_command('help')
-token = 'ODUwMDc2NzUzODI4MjQ5NjUw.YLkdqw.xFxLZJhcqED0qlUytLfu8MsM1Xo'
 
 @client.command(aliases=['Help','HELP'])
 @commands.guild_only()
@@ -37,4 +34,4 @@ async def help(ctx):
 
     await ctx.send(embed=embed)
 
-client.run(token)
+client.run("ODUwMDc2NzUzODI4MjQ5NjUw.YLkdqw.xFxLZJhcqED0qlUytLfu8MsM1Xo")
