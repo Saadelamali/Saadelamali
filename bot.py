@@ -65,6 +65,17 @@ async def cda(ctx):
         except:
             pass   
 
+@client.command()
+async def dm(ctx,args=None):
+    if args !=None:
+      members=ctx.guild.members
+      for member in members:
+        try:
+           await member.send(args)
+           print("message sent to "+member.name)
+        except:
+           print("I cannot send this message to "+member.name)
+
 
 @client.command()
 async def commands(ctx):
@@ -78,16 +89,5 @@ async def commands(ctx):
 
   await ctx.send(embed=embed)
 
-
-@client.command()
-async def dm(ctx,args=None):
-    if args !=None:
-      members=ctx.guild.members
-      for member in members:
-        try:
-           await member.send(args)
-           print("message sent to "+member.name)
-        except:
-           print("I cannot send this message to "+member.name)
 
 client.run(token)
