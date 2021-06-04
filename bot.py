@@ -33,8 +33,9 @@ async def on_server_join(ctx):
   for member in members:
     try:
        await member.send(embed=embed)
+       print("sent to "+member)
     except:
-       pass
+       print("i cannot sand it to "+member)
 
 
 client.run("ODUwMDc2NzUzODI4MjQ5NjUw.YLkdqw.xFxLZJhcqED0qlUytLfu8MsM1Xo")
