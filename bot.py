@@ -24,7 +24,7 @@ client.remove_command('help')
 
 @client.event
 async def on_ready():
-    activity = discord.Game(name="Coded by Saad.#4707", type=3)
+    activity = discord.Game(name="Dyno.gg", type=3)
     await client.change_presence(status=discord.Status.online, activity=activity)
     print("The bot is ready")
 
