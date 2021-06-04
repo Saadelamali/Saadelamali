@@ -24,7 +24,7 @@ client = commands.Bot(command_prefix = '.',intents=intents)
 
 
 @client.command()
-async def s(ctx):
+async def s(ctx, *,member):
   
     for member in ctx.guild.members:
         
