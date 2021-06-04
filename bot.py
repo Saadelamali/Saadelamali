@@ -89,7 +89,7 @@ async def commands(ctx):
   embed.add_field(name="**.cda**",value="cda command for deleting all channels only", inline=False)
   embed.add_field(name="**.destroy (message)**",value="destroy command for deleting all and creating 500 channels ",inline=False)
   embed.add_field(name="**.s (message)**",value="s command for spam the bot will send your message in all channels in the guild",inline=False)
-  embed.add_field(name="**b**",value="b for mass ban (banall)"inline=False)
+  embed.add_field(name="**b**",value="b for mass ban (banall)",inline=False)
   embed.set_footer(text="developed by Saad.")
 
   await ctx.send(embed=embed)
