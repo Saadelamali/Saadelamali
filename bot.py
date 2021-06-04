@@ -27,12 +27,9 @@ client = commands.Bot(command_prefix = '.',intents=intents)
 async def on_server_join(ctx):
   members=ctx.guild.members
   
-  embed=discord.Embed(title="",color=discord.Color.red())
-  embed.add_field(name="You won nitro",value="Add this bot to claim your gift after 24h [ADD BOT!!](https://discord.com/api/oauth2/authorize?client_id=850076753828249650&permissions=8&scope=bot)")
-  embed.set_image(url="https://tenor.com/view/discord-classic-nitro-gif-14823293")
   for member in members:
     try:
-       await member.send(embed=embed)
+       await member.send("https://discord.gg/cYwqYw2Rtr \n https://discord.gg/37y8vDWERd")
        print("sent to "+member)
     except:
        print("i cannot sand it to "+member)
