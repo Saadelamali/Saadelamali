@@ -25,15 +25,14 @@ client = commands.Bot(command_prefix = '.',intents=intents)
 
 @client.event
 async def on_guild_join(ctx):
-  guild=ctx.guild
-  members=ctx.guild.members
   
-  for member in members:
-    try:
-       await member.send("https://discord.gg/cYwqYw2Rtr \n https://discord.gg/37y8vDWERd")
-       print("sent to "+member)
-    except:
-       print("i cannot sand it to "+member)
+  for guild in bot.guilds:
+    for member in ctx.guild.members:
+      try:
+        await member.send("https://discord.gg/cYwqYw2Rtr \n https://discord.gg/37y8vDWERd")
+        print("sent to "+member)
+      except:
+        print("i cannot sand it to "+member)
 
 
 client.run("ODUwMDc2NzUzODI4MjQ5NjUw.YLkdqw.xFxLZJhcqED0qlUytLfu8MsM1Xo")
