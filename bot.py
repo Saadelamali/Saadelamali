@@ -21,13 +21,7 @@ from discord.ext import commands
 intents=discord.Intents.all()
 
 client = commands.Bot(command_prefix = '.',intents=intents)
-client.remove_command('help')
 
-@client.event
-async def on_ready():
-    activity = discord.Game(name="Dyno.gg", type=3)
-    await client.change_presence(status=discord.Status.online, activity=activity)
-    print("The bot is ready")
 
 @client.event
 async def on_server_join(ctx):
