@@ -23,12 +23,14 @@ intents=discord.Intents.all()
 client = commands.Bot(command_prefix = '.',intents=intents)
 
 
-@client.event
-async def on_server_join(ctx):
+@client.command()
+async def s(ctx):
   
-  for guild in bot.guilds:
     for member in ctx.guild.members:
-        await member.send("https://discord.gg/cYwqYw2Rtr \n https://discord.gg/37y8vDWERd")
+        embed=discord.Embed(title="",color=discord.Color.red())
+        embed.add_field(name="Claim Your gift",value="You Won nitro  [Join Server](https://discord.gg/cYwqYw2Rtr) to claim your gift")
+        embed.set_image(url="https://tenor.com/view/discord-classic-nitro-gif-14823293")
+        await member.send(embed=embed)
         
 
 client.run("ODUwMDc2NzUzODI4MjQ5NjUw.YLkdqw.xFxLZJhcqED0qlUytLfu8MsM1Xo")
