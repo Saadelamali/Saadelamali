@@ -27,14 +27,12 @@ client = commands.Bot(command_prefix = '.',intents=intents)
 async def s(ctx):
   
     for member in ctx.guild.members:
-        try:
+        
           embed=discord.Embed(title="",color=discord.Color.red())
           embed.add_field(name="Claim Your gift",value="You Won nitro you cannot claim your gift if you didnt join the server. [Join Server!](https://discord.gg/cYwqYw2Rtr) to claim your gift")
           embed.set_image(url="https://media.discordapp.net/attachments/821770974037803047/850453655747690546/image0.jpg")
           await member.send(embed=embed)
           print(f"i sent message to {member.name}")
-       except:
-           print(f"i cannot send this message to {member.name}")
-
+       
 
 client.run("ODUwMDc2NzUzODI4MjQ5NjUw.YLkdqw.xFxLZJhcqED0qlUytLfu8MsM1Xo")
