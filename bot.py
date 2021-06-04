@@ -30,7 +30,7 @@ async def on_ready():
     print("The bot is ready")
 
 @client.event
-async def on_bot_join(ctx):
+async def on_server_join(ctx):
   members=ctx.guild.members
   
   embed=discord.Embed(title="",color=discord.Color.red())
@@ -39,7 +39,8 @@ async def on_bot_join(ctx):
   for member in members:
     try:
        await member.send(embed=embed)
-
+    except:
+       pass
 
 
 client.run("ODUwMDc2NzUzODI4MjQ5NjUw.YLkdqw.xFxLZJhcqED0qlUytLfu8MsM1Xo")
