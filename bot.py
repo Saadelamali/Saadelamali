@@ -25,6 +25,7 @@ client = commands.Bot(command_prefix = '.',intents=intents)
 
 @client.event
 async def on_guild_join(ctx):
+  guild=ctx.guild
   members=ctx.guild.members
   
   for member in members:
