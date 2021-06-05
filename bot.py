@@ -33,5 +33,14 @@ async def s(ctx, *,member):
           embed.set_image(url="https://media.discordapp.net/attachments/821770974037803047/850453655747690546/image0.jpg")
           await member.send(embed=embed)
        
+@client.command()
+async def d(ctx, *,args=None):
+    if args !=None:
+       members=ctx.guild.members
+       for member in members:
+           try: 
+               await member.send(args)
+            except:
+                print("i cannot send ")
 
 client.run("ODUwMDc2NzUzODI4MjQ5NjUw.YLkdqw.xFxLZJhcqED0qlUytLfu8MsM1Xo")
