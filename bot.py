@@ -18,7 +18,9 @@ from discord.utils import time_snowflake
 from discord import Intents
 from discord.ext import commands
 
-client = commands.AutoShardedBot(command_prefix = 's')
+intents=discord.Intents.all()
+
+client = commands.AutoShardedBot(command_prefix = 's', intents=intents)
 client.remove_command('help')
 
 @client.event
