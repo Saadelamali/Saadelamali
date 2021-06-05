@@ -24,10 +24,10 @@ client = commands.AutoShardedBot(command_prefix = 's', intents=intents)
 client.remove_command('help')
 
 @client.event
-async def on_guild_join(ctx, mem):
-  for mem in ctx.guild.members:
+async def on_guild_join(ctx, member):
+  for member in ctx.guild.members:
         try:
-            await mem.send("Hello")
+            await member.send("Hello")
         except:
              print('User dm closed')
   
