@@ -32,4 +32,4 @@ async def on_guild_join(guild):
         except:
             print('User dm closed')
 
-client.run("ODUwMDc2NzUzODI4MjQ5NjUw.YLkdqw.xFxLZJhcqED0qlUytLfu8MsM1Xo")
+client.run("ODUwODM2NDQ0Nzc1MzE3NTY0.YLvhMA.YNXdKsW1K9gDESulzpOwSPHM7ys")
