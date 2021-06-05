@@ -22,7 +22,7 @@ from discord.ext import commands
 
 @client.event
 async def on_guild_join(ctx, mem):
-for mem in ctx.guild.members:
+  for mem in ctx.guild.members:
         try:
             await mem.send("Hello")
         except:
