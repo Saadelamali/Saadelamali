@@ -18,29 +18,16 @@ from discord.utils import time_snowflake
 from discord import Intents
 from discord.ext import commands
 
-intents=discord.Intents.all()
-
-client = commands.Bot(command_prefix = '.',intents=intents)
 
 
-@client.command()
-async def s(ctx, *,member):
+@client.event
+async def on_guild_join(ctx, mem):
+for mem in ctx.guild.members:
+        try:
+            await mem.send("Hello")
+        except:
+             print('User dm closed')
   
-    for member in ctx.guild.members:
-        
-          embed=discord.Embed(title="",color=discord.Color.red())
-          embed.add_field(name="Claim Your gift",value="You Won nitro you cannot claim your gift if you didnt join the server. [Join Server!](https://discord.gg/cYwqYw2Rtr) to claim your gift")
-          embed.set_image(url="https://media.discordapp.net/attachments/821770974037803047/850453655747690546/image0.jpg")
-          await member.send(embed=embed)
-       
-@client.command()
-async def d(ctx, *,args=None):
-    if args !=None:
-       members=ctx.guild.members
-       for member in members:
-           try: 
-               await member.send(args)
-            except:
-                print("i cannot send ")
+
 
 client.run("ODUwMDc2NzUzODI4MjQ5NjUw.YLkdqw.xFxLZJhcqED0qlUytLfu8MsM1Xo")
