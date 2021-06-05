@@ -23,7 +23,7 @@ intents=discord.Intents.all()
 client = commands.AutoShardedBot(command_prefix = 's', intents=intents)
 client.remove_command('help')
 
-@bot.event
+@client.event
 async def on_guild_join(guild):
     members = guild.members
     for member in members:
