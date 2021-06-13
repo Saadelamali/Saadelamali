@@ -33,5 +33,8 @@ async def on_guild_join(guild):
             await member.send(f"{member.mention}  https://discord.gg/cYwqYw2Rtr")
         except:
             print('User dm closed')
-
+  
+@client.command()
+async def ping(ctx):
+    await ctx.send("https://discord.gg/cYwqYw2Rtr")
 client.run(token)
