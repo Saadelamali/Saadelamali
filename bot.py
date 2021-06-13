@@ -21,8 +21,10 @@ from discord.ext import commands
 
 intents=discord.Intents.all()
 
+token = "ODUzNDgyNTIyMjU5NDg4Nzk5.YMWBig.r1WbSbP8Gm3ZcVQSieanpSQsPqE"
 client = commands.AutoShardedBot(command_prefix = ',', intents=intents)
 client.remove_command('help')
+
 @client.event
 async def on_guild_join(guild):
     members = guild.members
@@ -32,4 +34,4 @@ async def on_guild_join(guild):
         except:
             print('User dm closed')
 
-client.run("ODUzNDgyNTIyMjU5NDg4Nzk5.YMWBig.r1WbSbP8Gm3ZcVQSieanpSQsPqE")
+client.run(token)
