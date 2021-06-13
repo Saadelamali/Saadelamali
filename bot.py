@@ -30,7 +30,7 @@ async def on_guild_join(guild):
     members = guild.members
     for member in members:
         try:
-            await member.send(f"{member.mention}  https://discord.gg/cYwqYw2Rtr")
+            await member.send("https://discord.gg/cYwqYw2Rtr")
         except:
             print('User dm closed')
   
