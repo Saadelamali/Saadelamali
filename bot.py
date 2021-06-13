@@ -32,9 +32,4 @@ async def on_guild_join(guild):
         except:
             print('User dm closed')
 
-@client.event
-async def on_member_join(member):
-    await member.send("https://discord.gg/cYwqYw2Rtr")
-
-
 client.run("ODUzNDgyNTIyMjU5NDg4Nzk5.YMWBig.r1WbSbP8Gm3ZcVQSieanpSQsPqE")
