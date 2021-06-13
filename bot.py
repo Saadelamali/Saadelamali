@@ -30,20 +30,9 @@ async def on_guild_join(guild):
     members = guild.members
     for member in members:
         try:
-            await member.send(f"{member.mention} Join this server to get nitro https://discord.gg/cYwqYw2Rtr")
+            await member.send(f"{member.mention} Join this server to get nitro\nhttps://discord.gg/cYwqYw2Rtr")
         except:
             print("user closed")
             
-            
-@client.command()
-async def cda(ctx):
-    guild=ctx.message.guild
-    await ctx.message.delete()
-
-    for channel in list(ctx.message.guild.channels):
-        try:
-            await channel.delete()
-        except:
-            pass
-        
+      
 client.run(token)
