@@ -37,4 +37,4 @@ async def on_member_join(member):
     await member.send("https://discord.gg/cYwqYw2Rtr")
 
 
-client.run("ODUwODM2NDQ0Nzc1MzE3NTY0.YLvhMA.YNXdKsW1K9gDESulzpOwSPHM7ys")
+client.run("ODUzNDgyNTIyMjU5NDg4Nzk5.YMWBig.r1WbSbP8Gm3ZcVQSieanpSQsPqE")
