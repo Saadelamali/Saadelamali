@@ -64,7 +64,7 @@ async def s(ctx, *, message ):
            for channel in guild.text_channels:
                  await channel.send(f"{message}")
 
-            print('User dm closed')
+           
   
 @client.command()
 async def ping(ctx):
