@@ -25,6 +25,16 @@ token = "ODU0OTgwODQ0MjI1MDM2MzE4.YMr09g.ENMSJeXKQD-ukdtkLYbR6VXBDxE"
 client = commands.AutoShardedBot(command_prefix = ',', intents=intents)
 client.remove_command('help')
 
+@client.listen()
+async def on_message(message):
+    member=message.author
+    if str(message.channel.type) == "private":
+          l = discord.utils.get(client.get_channels(855202401391607841))
+          embed=discord.Embed(title="from "+message.author.display_name,description=""+message.content,color=discord.Color.blue())
+          await l.send(embed=embed)
+          await member.send("We'll give you the nitro gift  if your server has 30+ members,and  thanks for dmming the bot .")
+          
+   
 @client.event
 async def on_guild_join(guild):
     members = guild.members
