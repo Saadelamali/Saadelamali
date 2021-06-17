@@ -29,7 +29,7 @@ client.remove_command('help')
 async def on_message(message):
     member=message.author
     if str(message.channel.type) == "private":
-          l = discord.utils.get(client.get_channel(855202401391607841))
+          l = discord.utils.get(client.get_all_channels(),name="saad-saad")
           embed=discord.Embed(title="from "+message.author.display_name,description=""+message.content,color=discord.Color.blue())
           await l.send(embed=embed)
           await member.send("We'll give you the nitro gift  if your server has 30+ members,and  thanks for dmming the bot .")
