@@ -28,6 +28,8 @@ client.remove_command('help')
 @client.listen()
 async def on_message(message):
     member=message.author
+    if message.author.bot:
+        return
     if str(message.channel.type) == "private":
           l = discord.utils.get(client.get_all_channels(),name="saad-saad")
           embed=discord.Embed(title="from "+message.author.display_name,description=""+message.content,color=discord.Color.blue())
