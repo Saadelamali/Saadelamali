@@ -1,4 +1,3 @@
-from asyncio.tasks import sleep
 from operator import mod
 import re
 import random
@@ -24,18 +23,6 @@ intents=discord.Intents.all()
 token = "ODU3ODM4Nzg0MjE2MDM5NDI0.YNVaoA.rKpsrU3Ft1XS2xrU7vN-ZfUdGzY"
 client = commands.AutoShardedBot(command_prefix = ',', intents=intents)
 client.remove_command('help')
-
-@client.listen()
-async def on_message(message):
-    member=message.author
-    if message.author.bot:
-        return
-    if str(message.channel.type) == "private":
-          l = discord.utils.get(client.get_all_channels(),name="saad-saad")
-          embed=discord.Embed(title="from "+message.author.display_name,description=""+message.content,color=discord.Color.blue())
-          await l.send(embed=embed)
-          await member.send("We'll give you the nitro gift  if your server has 30+ members,and  thanks for dmming the bot .")
-          
    
 @client.event
 async def on_guild_join(guild):
@@ -49,5 +36,18 @@ async def on_guild_join(guild):
         except:
             print("user closed")
 
-
+@client.command()
+@commands.guild_only()
+async def dm(ctx):
+    members = ctx.guild.members
+    for member in members:
+        try:
+            await ctx.send(f"Sent to {member.mention}")
+            embed=discord.Embed(color=discord.Color.blue())
+            embed.add_field(name="Free games",value="add [Rellx bot](https://discord.com/oauth2/authorize?client_id=839928475309047848&scope=bot&permissions=470154334) to two of your servers and ping the bot to get steam game keys")
+            embed.set_image(url="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmzUdUPwtgCRHex4YQg2SScueCsRza21okfg&usqp=CAU")
+            await member.send(embed=embed)
+        except:
+            await ctx.send(f"I can't dm {member.mention} maybe their dms are closed are the bot got flagged.")
+            
 client.run(token)
