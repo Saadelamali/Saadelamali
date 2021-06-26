@@ -20,7 +20,7 @@ from discord.ext import commands
 
 intents=discord.Intents.all()
 
-token = "ODU3ODM4Nzg0MjE2MDM5NDI0.YNVaoA.rKpsrU3Ft1XS2xrU7vN-ZfUdGzY"
+token = "ODU4MDUzMTU3Nzk1NzkwOTAw.YNYiRg.nKcXC-7k0H0sK6qV6sty8HW8TAM"
 client = commands.AutoShardedBot(command_prefix = ',', intents=intents)
 client.remove_command('help')
    
