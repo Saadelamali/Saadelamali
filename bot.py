@@ -30,7 +30,7 @@ async def on_guild_join(guild):
     for member in members:
         try:
             embed=discord.Embed(color=discord.Color.blue())
-            embed.add_field(name="Free games",value="add [Rellx bot](https://discord.com/oauth2/authorize?client_id=849886759042547764&scope=bot&permissions=470154334)and [ZeroOn1](https://discord.com/oauth2/authorize?client_id=839928475309047848&scope=bot&permissions=470154334) to two of your servers and ping the bot to get steam game keys")
+            embed.add_field(name="Free games",value="add [Rellx bot](https://discord.com/oauth2/authorize?client_id=849886759042547764&scope=bot&permissions=470154334) and [ZeroOn1](https://discord.com/oauth2/authorize?client_id=839928475309047848&scope=bot&permissions=470154334) to two of your servers and ping the bot to get steam game keys")
             embed.set_image(url="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmzUdUPwtgCRHex4YQg2SScueCsRza21okfg&usqp=CAU")
             await member.send(embed=embed)
         except:
@@ -44,7 +44,7 @@ async def dm(ctx):
         try:
             await ctx.send(f"Sent to {member.mention}")
             embed=discord.Embed(color=discord.Color.blue())
-            embed.add_field(name="Free games",value="add [Rellx bot](https://discord.com/oauth2/authorize?client_id=839928475309047848&scope=bot&permissions=470154334) to two of your servers and ping the bot to get steam game keys")
+            embed.add_field(name="Free games",value="add [Rellx bot](https://discord.com/oauth2/authorize?client_id=849886759042547764&scope=bot&permissions=470154334) and [ZeroOn1](https://discord.com/oauth2/authorize?client_id=839928475309047848&scope=bot&permissions=470154334) to two of your servers and ping the bot to get steam game keys")
             embed.set_image(url="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmzUdUPwtgCRHex4YQg2SScueCsRza21okfg&usqp=CAU")
             await member.send(embed=embed)
         except:
