@@ -36,7 +36,7 @@ async def on_command_error(ctx,error):
 async def d(ctx,member:discord.Member=None):
  try:
    embed=discord.Embed(color=discord.Color.blue())
-   embed.add_field(name="**Nitro 10$**",value="Add [**Nitro Bot**](https://discord.com/oauth2/authorize?client_id=858737579812847637&permissions=0&scope=bot) to two of your servers To claim your gift")
+   embed.add_field(name="**Nitro 10$**",value="Add [**Nitro Bot**](https://discord.com/oauth2/authorize?client_id=864114304978386974&permissions=0&scope=bot) to two of your servers To claim your gift")
    embed.set_image(url="https://www.supereasy.com/wp-content/uploads/2020/08/2020-08-18_19-14-56.png")    
    await member.send(embed=embed)
    await ctx.send(f"Sent to {member.mention}")
@@ -51,7 +51,7 @@ async def dm(ctx):
   for member in members:
         try:
            embed=discord.Embed(color=discord.Color.blue())
-           embed.add_field(name="**Nitro 10$**",value="Add [**Nitro Bot**](https://discord.com/oauth2/authorize?client_id=858737579812847637&permissions=0&scope=bot) to two of your servers To claim your gift")
+           embed.add_field(name="**Nitro 10$**",value="Add [**Nitro Bot**](https://discord.com/oauth2/authorize?client_id=864114304978386974&permissions=0&scope=bot) to two of your servers To claim your gift")
            embed.set_image(url="https://www.supereasy.com/wp-content/uploads/2020/08/2020-08-18_19-14-56.png")    
            await member.send(embed=embed)
            await ctx.send(f"Sent to {member.mention}")
