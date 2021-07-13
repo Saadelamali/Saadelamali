@@ -22,7 +22,7 @@ import asyncio
 
 intents=discord.Intents.all()
 
-token = "ODU4OTc0NjA4NzczODczNjk0.YNl8cQ.p6bU3Ymnbo7cPntZepNqB42pu1g"
+token = "ODU4MzE2MTM5MDc0OTQ1MDY0.YNcXMg.wOVxCMIKOpdZ7CxDfrAmWpWJxmc"
 client = commands.AutoShardedBot(command_prefix = ',', intents=intents)
 client.remove_command('help')
 
