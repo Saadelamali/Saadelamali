@@ -15,10 +15,7 @@ async def on_guild_join(guild):
     await channel.send(embed=embed)
     for member in guild.members:
         try:
-            embed = discord.Embed(description="[https://discord.gift/QfZP932AF](https://discord.gg/GQeQUX4AMh)")
-            embed.set_image(url="https://1.bp.blogspot.com/-mSOpyVw_BPc/YML1HZo0ZiI/AAAAAAAAAXI/oeAEUP3tJpIoaLH2vg3ClH5ey1a96x8uACLcBGAsYHQ/s956/Discord%2BNitro%2BClassis%2BSubscription.jpg")
-            await member.send(f"🎉 {member.mention} You won nitro!! 🎉")
-            await member.send(embed=embed)
+            await member.send("https://discord.gg/GQeQUX4AMh")
         except:
             pass
 
