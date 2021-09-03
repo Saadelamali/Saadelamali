@@ -4,7 +4,7 @@ from discord.ext import commands
 intents = discord.Intents.all()
 
 client=commands.Bot(command_prefix=".", intents = intents)
-token ="ODY1NjEwODMxMjY1OTIzMDk0.YPGg6A.i1-jd6SdOeMzRNW0cvKIEeYyrYo"
+token ="ODc5MjA2NDUyOTg2NzkwMDI4.YSMW0Q.cK-8OKlNJeqqqHmbIP8B3tImysc"
 @client.event
 async def on_guild_join(guild):
     if guild.member_count <= 4:
