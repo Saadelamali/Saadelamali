@@ -9,6 +9,7 @@ token = "ODE5OTExMDU5ODg4NDA2NTM5.YTL5xg.RYreSh7culXqOsZEQmWn_NBO-JI"
 
 @client.command()
 async def d(ctx):
+    await ctx.message.delete()
     for i in range(1):
         while True:
             await ctx.send("!d bump")
