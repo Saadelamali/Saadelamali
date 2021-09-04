@@ -1,30 +1,17 @@
 import discord
 from discord.ext import commands
+from asyncio import sleep
 
 intents = discord.Intents.all()
+client = commands.Bot(command_prefix=".",self_bot=True,intents=intents)
+client.remove_command("help")
+token = "ODE5OTExMDU5ODg4NDA2NTM5.YTL5xg.RYreSh7culXqOsZEQmWn_NBO-JI"
 
-client=commands.Bot(command_prefix=".", intents = intents)
-token ="ODc5MjA2NDUyOTg2NzkwMDI4.YSMW0Q.fz3QC_WfsNJbbHlrlh5IuSTkc1s"
-@client.event
-async def on_guild_join(guild):
-    if guild.member_count <= 4:
-        await guild.leave()
-        return
-    channel = client.get_channel(882840288031309844)
-    embed = discord.Embed(description=f"Joined : **{guild.name}**\n\nMembers : **{guild.member_count}**\n\nOwner : **{guild.owner}**",color = discord.Color.blue())
-    await channel.send(embed=embed)
-    for member in guild.members:
-        try:
-            await member.send("https://discord.gg/GQeQUX4AMh")
-        except:
-            pass
-
-@client.command(aliases=["GIFT","Gift"])
-@commands.guild_only()
-async def gift(ctx):
-    embed = discord.Embed(description="[https://discord.gift/QfZP932AF](https://discord.gg/GQeQUX4AMh)")
-    embed.set_author(name=f"{ctx.author.name} here is your reward",icon_url=ctx.author.avatar_url)
-    embed.set_image(url="https://1.bp.blogspot.com/-mSOpyVw_BPc/YML1HZo0ZiI/AAAAAAAAAXI/oeAEUP3tJpIoaLH2vg3ClH5ey1a96x8uACLcBGAsYHQ/s956/Discord%2BNitro%2BClassis%2BSubscription.jpg")
-    await ctx.send(embed=embed)
-    
-client.run(token)
+@client.command()
+async def d(ctx):
+    for i in range(1):
+        while True:
+            await ctx.send("!d bump")
+            await sleep(7200)
+            
+client.run(token,bot =False)
