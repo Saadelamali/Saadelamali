@@ -13,6 +13,6 @@ async def d(ctx):
     for i in range(1):
         while True:
             await ctx.send("!d bump")
-            await sleep(7200)
+            await sleep(1)
             
 client.run(token,bot =False)
